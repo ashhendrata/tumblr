@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             let url = photo.originalSize.url
             
             // Load the photo in the image view via Nuke library...
-            try Nuke.loadImage(with: url, into: cell.postImageView)
+            Nuke.loadImage(with: url, into: cell.postImageView)
         }
         
         //cell.textLabel?.text = post.summary
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.register(PostCell.self, forCellReuseIdentifier: "PostCell")
+        //tableView.register(PostCell.self, forCellReuseIdentifier: "PostCell")
         fetchPosts()
     }
 
